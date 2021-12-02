@@ -20,12 +20,13 @@ public class MarsRover {
         directionList.add("N");
     }
 
-    public String getStatus() {
+    public String controlMarsRover(String command) {
+        if (command.equals("M")) {
+            moveMarsRover();
+        } else {
+            rotateMarsRover(command);
+        }
         return coordinateX + " " + coordinateY + " " + direction;
-    }
-
-    public String  controlMarsRover(String command) {
-        return null;
     }
 
     private void rotateMarsRover(String command) {
