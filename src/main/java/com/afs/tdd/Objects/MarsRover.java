@@ -1,49 +1,35 @@
 package com.afs.tdd.Objects;
 
 
-import jdk.internal.net.http.common.Pair;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MarsRover {
     int coordinateX;
     int coordinateY;
     String direction;
+    static final List<String> directionList = new ArrayList<>();
 
     public MarsRover(int coordinateX, int coordinateY, String direction) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
         this.direction = direction;
+        directionList.add("E");
+        directionList.add("S");
+        directionList.add("W");
+        directionList.add("N");
     }
 
-    public int getCoordinateX() {
-        return coordinateX;
-    }
-
-    public int getCoordinatey() {
-        return coordinateY;
-    }
-
-    public void setCoordinateX(int coordinateX) {
-        this.coordinateX = coordinateX;
-    }
-
-    public void setCoordinateY(int coordinateY) {
-        this.coordinateY = coordinateY;
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
 
     public String getStatus() {
         return coordinateX + " " + coordinateY + " " + direction;
     }
 
     public void rotateMarsRover(String command) {
-
+        int currentDirectionIndex = directionList.indexOf(direction);
+        if (command.equals("R")) {
+            direction = directionList.get((currentDirectionIndex + 1) > (directionList.size() - 1) ? 0 : directionList.indexOf(direction) + 1);
+        }
     }
 }
 
