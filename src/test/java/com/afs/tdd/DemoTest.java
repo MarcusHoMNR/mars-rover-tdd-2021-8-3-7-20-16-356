@@ -165,5 +165,4 @@ class DemoTest {
         //return
         assertEquals("-1 0 W", result);
     }
-
 }

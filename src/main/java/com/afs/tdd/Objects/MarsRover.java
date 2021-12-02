@@ -26,7 +26,7 @@ public class MarsRover {
         } else {
             rotateMarsRover(command);
         }
-        return coordinateX + " " + coordinateY + " " + direction;
+        return String.format("%d %d %s", coordinateX, coordinateY, direction);
     }
 
     private void rotateMarsRover(String command) {
