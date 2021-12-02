@@ -35,7 +35,22 @@ public class MarsRover {
     }
 
     public void moveMarsRover() {
-
+        switch (direction) {
+            case "E":
+                coordinateX++;
+                break;
+            case "S":
+                coordinateY--;
+                break;
+            case "W":
+                coordinateX--;
+                break;
+            case "N":
+                coordinateY++;
+                break;
+            default:
+                break;
+        }
     }
 }
 
