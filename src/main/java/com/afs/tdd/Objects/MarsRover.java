@@ -20,7 +20,6 @@ public class MarsRover {
         directionList.add("N");
     }
 
-
     public String getStatus() {
         return coordinateX + " " + coordinateY + " " + direction;
     }
@@ -33,6 +32,10 @@ public class MarsRover {
         if (command.equals("L")) {
             direction = directionList.get((currentDirectionIndex - 1) < 0 ? directionList.size() - 1 : directionList.indexOf(direction) - 1);
         }
+    }
+
+    public void moveMarsRover() {
+
     }
 }
 

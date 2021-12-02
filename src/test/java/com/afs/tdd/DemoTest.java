@@ -120,4 +120,57 @@ class DemoTest {
         //return
         assertEquals("0 0 N", result);
     }
+
+    // Move
+    @Test
+    void should_coordinateY_change_to_1_when_move_Mars_Rover_given_direction_N() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+
+        //when
+        marsRover.moveMarsRover();
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("0 1 N", result);
+    }
+
+    @Test
+    void should_coordinateX_change_to_1_when_move_Mars_Rover_given_direction_E() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+
+        //when
+        marsRover.moveMarsRover();
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("1 0 E", result);
+    }
+
+    @Test
+    void should_coordinateY_change_to_minus_1_when_move_Mars_Rover_given_direction_S() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "S");
+
+        //when
+        marsRover.moveMarsRover();
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("0 -1 S", result);
+    }
+
+    @Test
+    void should_coordinateX_change_to_minus_1_when_move_Mars_Rover_given_direction_W() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+
+        //when
+        marsRover.moveMarsRover();
+        String result = marsRover.getStatus();
+
+        //return
+        assertEquals("-1 0 W", result);
+    }
 }
