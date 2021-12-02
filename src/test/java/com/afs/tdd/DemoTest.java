@@ -15,8 +15,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 E", result);
@@ -29,8 +28,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 S", result);
@@ -43,8 +41,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 W", result);
@@ -57,8 +54,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 N", result);
@@ -72,8 +68,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 W", result);
@@ -86,8 +81,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 S", result);
@@ -100,8 +94,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 E", result);
@@ -114,8 +107,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        marsRover.rotateMarsRover(command);
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 0 N", result);
@@ -123,54 +115,55 @@ class DemoTest {
 
     // Move
     @Test
-    void should_coordinateY_change_to_1_when_move_Mars_Rover_given_direction_N() {
+    void should_coordinateY_change_to_1_when_move_Mars_Rover_given_direction_N_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "N");
+        String command = "M";
 
         //when
-        marsRover.moveMarsRover();
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 1 N", result);
     }
 
     @Test
-    void should_coordinateX_change_to_1_when_move_Mars_Rover_given_direction_E() {
+    void should_coordinateX_change_to_1_when_move_Mars_Rover_given_direction_E_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "E");
+        String command = "M";
 
         //when
-        marsRover.moveMarsRover();
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("1 0 E", result);
     }
 
     @Test
-    void should_coordinateY_change_to_minus_1_when_move_Mars_Rover_given_direction_S() {
+    void should_coordinateY_change_to_minus_1_when_move_Mars_Rover_given_direction_S_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "S");
+        String command = "M";
 
         //when
-        marsRover.moveMarsRover();
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("0 -1 S", result);
     }
 
     @Test
-    void should_coordinateX_change_to_minus_1_when_move_Mars_Rover_given_direction_W() {
+    void should_coordinateX_change_to_minus_1_when_move_Mars_Rover_given_direction_W_command_M() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, "W");
+        String command = "M";
 
         //when
-        marsRover.moveMarsRover();
-        String result = marsRover.getStatus();
+        String result = marsRover.controlMarsRover(command);
 
         //return
         assertEquals("-1 0 W", result);
     }
+
 }

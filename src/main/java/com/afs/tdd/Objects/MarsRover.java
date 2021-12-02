@@ -24,7 +24,11 @@ public class MarsRover {
         return coordinateX + " " + coordinateY + " " + direction;
     }
 
-    public void rotateMarsRover(String command) {
+    public String  controlMarsRover(String command) {
+        return null;
+    }
+
+    private void rotateMarsRover(String command) {
         int currentDirectionIndex = directionList.indexOf(direction);
         if (command.equals("R")) {
             direction = directionList.get((currentDirectionIndex + 1) > (directionList.size() - 1) ? 0 : directionList.indexOf(direction) + 1);
@@ -34,7 +38,7 @@ public class MarsRover {
         }
     }
 
-    public void moveMarsRover() {
+    private void moveMarsRover() {
         switch (direction) {
             case "E":
                 coordinateX++;
